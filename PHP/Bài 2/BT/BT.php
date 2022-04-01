@@ -45,7 +45,7 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
             <div class="form-group"> 
                 <label>Fullname:</label>
-                <input type="text" class="form-control"  id="fullname" placeholder="Enter FullName" name="fullname" value="<?php if(isset($_POST["fullname"])) { echo $_POST["fullname"]; }?>">
+                <input type="text" class="form-control"  id="fullname" placeholder="FullName" name="fullname" value="<?php if(isset($_POST["fullname"])) { echo $_POST["fullname"]; }?>">
                 <span class="test-warning"> <?php echo $error_fullname; ?></span>
             </div>
                 <div class="form-group"> 
@@ -64,7 +64,7 @@
                         <div class="form-group"> 
                             <label>Native: </label>
                             <select class="form-control" name="native">
-                            <option value=""></option>
+                            <option value=" "></option>
                             <option <?php if (isset($native) && $native=="Hà Nội") echo "selected";?> value="Hà Nội">Hà Nội</option>
                             <option <?php if (isset($native) && $native=="Hồ Chí Minh") echo "selected";?> value="Hồ Chí Minh">Hồ Chí Minh</option>
                             <option <?php if (isset($native) && $native=="Đà Nẵng") echo "selected";?> value="Đà Nẵng">Đà Nẵng</option>
@@ -80,11 +80,12 @@
     </div>
     <div class="col-md-6">
         <br>
+        <h3>Avatar: <img src="<?php echo $image;?>" style="width:15rem;height:15rem;border-radius:50%;"></h3>
         <h3>Fullname: <?php if(isset($_POST["fullname"])) { echo $_POST["fullname"]; } ?></h3>
         <h3>Gender: <?php if(isset($_POST["gender"])) { echo $_POST["gender"]; } ?></h3>
         <h3>Date of birth: <?php if(isset($_POST["date"])) { echo $_POST["date"]; } ?></h3>
         <h3>Native: <?php if(isset($_POST["native"])) { echo $_POST["native"]; } ?></h3>
-        <img src="<?php echo $image;?>" style="width:15rem;height:15rem;border-radius:50%;">
+       
     </div>
 </div>
 </body>
